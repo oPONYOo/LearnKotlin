@@ -1,4 +1,4 @@
-package com.example.learnkotlin.kotlin_in_action.chapter4
+package com.example.learnkotlin.kotlin_in_action.chapter4.classEx
 
 
 interface State: java.io.Serializable
