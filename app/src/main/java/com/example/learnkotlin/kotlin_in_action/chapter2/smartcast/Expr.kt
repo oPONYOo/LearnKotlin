@@ -1,4 +1,4 @@
-package com.example.learnkotlin.smartcast
+package com.example.learnkotlin.kotlin_in_action.chapter2.smartcast
 
 interface Expr
 
@@ -26,9 +26,11 @@ private fun evalWithLogging(e: Expr): Int =
             left + right
         }
         else -> throw IllegalArgumentException("Unknown expression")
+    // 디폴트 분기가 있어야함. 여기서는 반환할 만한 의미 있는 값이 없으모 예외를 던진다.
+    // 새로운 클래스에 대한 분기처리를 안해줄 경우 디폴트 분기로 넘어가고 버그가 발생할 수 있다. -> sealed class 사용하기
     }
 
-fun main() {
+private fun main() {
     println(eval(Sum(Num(1), Num(2))))
     println(evalWithLogging(Sum(Sum(Num(1), Num(2)), Num(4))))
 }

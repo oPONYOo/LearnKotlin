@@ -1,4 +1,4 @@
-package com.example.learnkotlin.range
+package com.example.learnkotlin.kotlin_in_action.chapter2.range
 
 private fun recogninze(c: Char) = when(c) {
     in '0'..'9' -> "It's a digit!"

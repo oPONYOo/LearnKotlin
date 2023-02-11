@@ -1,4 +1,4 @@
-package com.example.learnkotlin.extension
+package com.example.learnkotlin.kotlin_in_action.chapter3.extension
 
 
 //fun String.lastCHar(): Char = this.get(length - 1)
@@ -18,7 +18,7 @@ open class Button: View() {
     override fun click() = println("Button Clicked")
 }
 
-fun main() {
+private fun main() {
     println("JINA".lastCHar())
     val view: View = Button() // 정적 디스패치: 수신 객체로 지정한 변수의 정적 타입에 의해 어떤 확장함수가 호출될지 결정 -> 오버라이드X
     view.showOf()

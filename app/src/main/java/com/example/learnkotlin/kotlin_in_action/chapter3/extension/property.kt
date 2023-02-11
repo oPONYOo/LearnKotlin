@@ -1,4 +1,4 @@
-package com.example.learnkotlin.extension
+package com.example.learnkotlin.kotlin_in_action.chapter3.extension
 
 // 확장 프로퍼티 선언하기
 val String.lastChar: Char
@@ -11,7 +11,7 @@ var StringBuilder.lastChar: Char
         this.setCharAt(length - 1, value)
     }
 
-fun main() {
+private  fun main() {
     println("JINA".lastChar)
     val sb = java.lang.StringBuilder("JINA?")
     sb.lastChar = '!'

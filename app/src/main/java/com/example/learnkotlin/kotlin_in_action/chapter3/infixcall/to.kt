@@ -1,4 +1,4 @@
-package com.example.learnkotlin.infixcall
+package com.example.learnkotlin.kotlin_in_action.chapter3.infixcall
 
 val map = mapOf(1 to "one", 2 to "two", 3 to "three")
 val list = listOf(1, 2, 3, 4, 5)

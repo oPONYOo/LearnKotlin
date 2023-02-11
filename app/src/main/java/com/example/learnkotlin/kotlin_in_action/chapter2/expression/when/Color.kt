@@ -1,4 +1,4 @@
-package com.example.learnkotlin.expression.`when`
+package com.example.learnkotlin.kotlin_in_action.chapter2.expression.`when`
 
 import java.lang.Exception
 

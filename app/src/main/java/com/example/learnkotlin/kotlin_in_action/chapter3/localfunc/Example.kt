@@ -1,4 +1,4 @@
-package com.example.learnkotlin.localfunc
+package com.example.learnkotlin.kotlin_in_action.chapter3.localfunc
 
 class User(val id: Int, val name: String, val address: String)
 
@@ -72,6 +72,6 @@ fun User.validateBeforeSave() {
 }
 
 
-fun main() {
+private fun main() {
     saveUser(User(1, "", "seoul"))
 }

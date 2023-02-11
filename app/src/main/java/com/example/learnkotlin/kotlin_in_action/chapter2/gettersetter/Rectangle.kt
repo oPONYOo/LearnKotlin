@@ -1,4 +1,4 @@
-package com.example.learnkotlin
+package com.example.learnkotlin.kotlin_in_action.chapter2.gettersetter
 
 import kotlin.random.Random
 
@@ -13,6 +13,6 @@ fun createRandomRectangle(): Rectangle {
     return Rectangle(random.nextInt(), random.nextInt())
 }
 
-fun main() {
+private fun main() {
     println(createRandomRectangle().isSquare)
 }
