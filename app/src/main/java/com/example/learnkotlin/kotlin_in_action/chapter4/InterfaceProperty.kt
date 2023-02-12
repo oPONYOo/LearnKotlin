@@ -17,7 +17,7 @@ class SubscribingUser(val email: String): User {
         get() = email.substringBefore('@') // 매번 호출될때 마다 계산하는 커스텀 게터 활용
 }
 
-private fun getFaceBookName(id: Int) = "$id"
+fun getFaceBookName(id: Int) = "$id"
 
 class FacebookUser(val accountId: Int): User {
     override val nickname = getFaceBookName(accountId)
