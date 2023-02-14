@@ -1,12 +1,15 @@
 package com.example.learnkotlin.kotlin_in_action.chapter4.constructor
 
 
+
+// 아래 두 가지 상황에서 primary 생성자의 파라미터를 참조할 수 있다.
+// 1. 초기화 블럭 안에서만 primary 생성자의 파라미터를 참조 가능
+// 2. 프로퍼티를 초기화하는 식에서 참조 가능
 class User1 constructor(_nickname: String) {
     private val nickname1: String
 
     init {
-        nickname1 = _nickname
-        // 1. 초기화 블럭 안에서만 primary 생성자의 파라미터를 참조 가능
+        nickname1 = _nickname  // 1.
     }
     // 초기화 블럭으로 객체가 인스턴스화될 때 실행된다.
     // 초기화 블럭은 primary constructor와 함께 사용된다.
@@ -14,13 +17,15 @@ class User1 constructor(_nickname: String) {
 }
 
 class User2(_nickname: String) {
-    val nickname = _nickname // 2. 프로퍼티를 초기화하는 식에서 참조 가능
+    val nickname = _nickname  // 2/
 }
 
 
+
+// primary 생성자의 파라미터로 프로퍼티를 초기화한다면 파라미터 이름 앞에 val을 추가하여 프로퍼티 정의와 초기화를 할 수 있다.
 // val은 해당 파라미터에 상응하는 프로퍼티가 생성된다는 뜻
 // 다폴트 값 정의 가능
-open class User3(val nickname: String, val isSubscribed: Boolean = true)
+open class User3(val nickname: String = "jina", val isSubscribed: Boolean = true)
 
 //base 클래스를 초기화 하려면 클래스의 주 생성자에서 base 클래스의 생성자를 호출하고, 생성자 인자를 넘겨야 한다.
 class TwitterUser(nickname: String) : User3(nickname) {}
