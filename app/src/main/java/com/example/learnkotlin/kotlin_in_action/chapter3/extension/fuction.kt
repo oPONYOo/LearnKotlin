@@ -6,6 +6,11 @@ package com.example.learnkotlin.kotlin_in_action.chapter3.extension
 //fun String.lastCHar(): Char = this[length - 1]
 
 fun String.lastCHar(): Char = get(length - 1)
+/*public static final char lastCHar(@NotNull String $this$lastCHar) {
+    Intrinsics.checkNotNullParameter($this$lastCHar, "$this$lastCHar");
+    return $this$lastCHar.charAt($this$lastCHar.length() - 1);
+}*/
+
 
 fun View.showOf() = println("I'm a view")
 fun Button.showOff() = println("I'm a button")

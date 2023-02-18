@@ -14,44 +14,44 @@ val action = {person: Person, message: String -> sendEmail(person, message) }
 val nextAction = ::sendEmail
 
 
-// constructor reference(생성자 참)
+// constructor reference(생성자 참조)
 val createPerson = ::Person
 val p = createPerson("JINA", 24)
 
-// 확장 함수 참조도 가능
-fun Person.isAdult() = age >= 20
-val predicate = Person::isAdult
 
 
-/*public static final boolean isAdult(@NotNull Person $this$isAdult) {
-    Intrinsics.checkNotNullParameter($this$isAdult, "$this$isAdult");
-    return $this$isAdult.getAge() >= 20;
 
-     @NotNull
-   public static final KFunction getPredicate() {
-      return predicate;
-   }
-}*/
+
 fun main() {
     println(getAge(Person("jina", 24)))
     run(::salute) // 최상위 함수 참조. 최상위 함수이므로 ::앞에 클래스 이름을 생략한다.
 
     println(p)
 
+    // 확장 함수 참조도 가능
+    fun Person.isAdult() = age >= 20
+    val predicate = Person::isAdult
+
+
     // bound member reference
     val jinaAgeFunction = p::isAdult
-    /*val jinaAgeFunction: KFunction = object : Function0(MemberReferenceKt.p) {
-        // $FF: synthetic method
-        // $FF: bridge method
-        operator fun invoke(): Any? {
-            return this.invoke()
-        }
+    /*
+    KFunction jinaAgeFunction = new Function0(p) {
+         // $FF: synthetic method
+         // $FF: bridge method
+         public Object invoke() {
+            return this.invoke();
+         }
 
-        // 인스턴스에 대해 멤버를 호출
-        operator fun invoke(): Boolean {
-            return MemberReferenceKt.isAdult(this.receiver as Person?)
-        }
+         public final boolean invoke() {
+            return MemberReferenceKt.isAdult((Person)this.receiver);
+         }
+      };
     }*/
-    println(jinaAgeFunction())
-    println(predicate(p))
+    println(jinaAgeFunction()) // 인자가 없는 함수. 호출 시 수신 대상 객체를 지정해줄 필요없음
+//    boolean var1 = (Boolean)((Function0)jinaAgeFunction).invoke();
+
+
+    println(predicate(p)) // 인자가 하나. 인자로 받은 사람의 나이를 반환
+//    var1 = (Boolean)((Function1)predicate).invoke(p);
 }
