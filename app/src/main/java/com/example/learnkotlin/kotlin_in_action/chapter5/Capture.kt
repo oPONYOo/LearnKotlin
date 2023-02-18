@@ -3,7 +3,7 @@ package com.example.learnkotlin.kotlin_in_action.chapter5
 
 fun printMessageWithPrefix(message: Collection<String>, prefix: String) {
     message.forEach {
-        println("$prefix $it") // 자바와 다른점: 람다 밖 함수에 있는 파이널이 아닌(var가 아닌) 변수에 접근할 수 있다.
+        println("$prefix $it") // 자바와 다른점: 람다 밖 함수에 있는 파이널이 아닌(val가 아닌) 변수에 접근할 수 있다.
     }
 }
 
