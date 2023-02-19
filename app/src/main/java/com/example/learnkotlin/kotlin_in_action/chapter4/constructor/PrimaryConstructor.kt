@@ -37,10 +37,23 @@ class RadioButton : PrimaryButton()  // PrimaryButton 클래스를 상속한 하
 
 class Secretive private constructor() // 외부에서 인스턴스화 불가능
 
+class Ex(age: Int) {
+    constructor(age: Int, word: String) : this(age) {
+        println("word: $word")
+    }
+
+    init {
+        println("age: $age")
+    }
+}
+
+
+
 fun main() {
     val jina = User3("지냐")
     println(jina.isSubscribed)
     val ponyo = User3("포뇨", isSubscribed = false)
     println(ponyo.isSubscribed)
+    Ex(12, "word")
 }
 
