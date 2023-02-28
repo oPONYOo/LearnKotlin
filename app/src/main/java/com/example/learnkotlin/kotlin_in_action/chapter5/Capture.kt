@@ -7,9 +7,9 @@ fun printMessageWithPrefix(message: Collection<String>, prefix: String) {
     }
 }
 
-
+var clientErrors = 0
 fun printlnProblem(response: Collection<String>) {
-    var clientErrors = 0
+
     var serverErrors = 0
     response.forEach {
         if (it.startsWith("4")) {

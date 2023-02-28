@@ -33,6 +33,21 @@ class ByLazyPerson(val name: String) {
         Object var3 = null;
         return (List)var1.getValue();
     }*/
+    // lazy 함수는 코틀린 관례에 맞는 시그니처의 getValue 메서드가 들어있는 객체를 반환한다.
+
+
+    /*this.emails$delegate = LazyKt.lazy((Function0)(new Function0() {
+        // $FF: synthetic method
+        // $FF: bridge method
+        public Object invoke() {
+            return this.invoke();
+        }
+
+        @NotNull
+        public final List invoke() {
+            return DelegatedPropertyEx1Kt.loadEmails(ByLazyPerson.this);
+        }
+    }));*/
 }
 
 //public actual fun <T> lazy(initializer: () -> T): Lazy<T> = SynchronizedLazyImpl(initializer)
