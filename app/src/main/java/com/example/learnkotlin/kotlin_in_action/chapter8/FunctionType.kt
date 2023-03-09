@@ -39,7 +39,7 @@ fun main() {
     }
 
     twoAndThree { a, b -> a + b }
-    twoAndThree { a, b -> a * b}
+    twoAndThree { a, b -> a * b }
 
     fun String.filter(predicate: (Char) -> Boolean): String {
         val sb = StringBuilder()
@@ -51,6 +51,16 @@ fun main() {
     }
 
     println("ab1c".filter { it in 'a'..'z' }) // 람다를 predicate 파라미터로 전달 in -> contains
+
+
+    // 함수 타입의 파라미터에 대한 디폴트 값 지정가능
+    fun <T> Collection<T>.defaultType(transform: (T) -> String = { it.toString() }) {
+
+    }
+
+    listOf("JINA", "PONYO").defaultType()
+
+
 
 
 }
