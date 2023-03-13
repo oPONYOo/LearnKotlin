@@ -2,6 +2,8 @@ package com.example.learnkotlin.kotlin_in_action.chapter6
 
 
 fun main() {
+    // 컬렉션 생성함수
+    // 구체적인 타입을 타입 인자로 넘기면 타입을 인스턴스화할 수 있다.
     val map = mapOf<String, Int>()
     val letters = Array<String>(26) { i -> ('a' + i).toString() } // 타입 명시 안해도 컴파일러가 자동으로 원소 타입 추론해줌
     println(letters.joinToString(""))
