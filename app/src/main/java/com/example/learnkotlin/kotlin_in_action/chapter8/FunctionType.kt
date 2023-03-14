@@ -5,7 +5,7 @@ fun processTheAnswer(f: (Int) -> Int) {
 }
 // 컴파일
 // 함수타입은 일반 인터페이스로 바뀐다. 함수 타입의 변수는 FunctionN 인터페이스를 구현하는 객체를 저장한다.
-// 함수 인자의 개수에 따라 Function0, Function1 등의 인터페이스 제공
+// 함수 인자의 개수에 따라 Function0, Function1 등의 인터페이스 제공 22개까지 있음
 // 각 인터페이스에는 invoke 메서드 정의가 들어있고 invoke를 호출하면 함수를 실행할 수 있다.
 /*public static final void processTheAnswer(@NotNull Function1 f) {
     Intrinsics.checkNotNullParameter(f, "f");
