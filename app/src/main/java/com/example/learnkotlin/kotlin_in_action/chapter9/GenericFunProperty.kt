@@ -1,6 +1,5 @@
 package com.example.learnkotlin.kotlin_in_action.chapter9
 
-import com.example.learnkotlin.kotlin_in_action.chapter3.infixcall.list
 
 fun main() {
     // slice 함수는 구체적 범위 안에 든 원소만을 포함하는 새로운 리스트를 반환한다.
