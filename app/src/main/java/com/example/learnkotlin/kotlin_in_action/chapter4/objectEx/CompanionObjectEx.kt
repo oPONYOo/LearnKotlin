@@ -3,10 +3,15 @@ package com.example.learnkotlin.kotlin_in_action.chapter4.objectEx
 import com.example.learnkotlin.kotlin_in_action.chapter4.getFaceBookName
 
 class A {
+
     companion object { // companion를 붙히면 해당 클래스의 동반 객체로 만들 수 있다.
         fun bar() {
             println("Companion object called")
         }
+        val justGreeting = "hello" // 컴파일시 getter 생김
+
+        const val greeting = "hello" // getter 안생김
+
     }
 }
 
