@@ -1,4 +1,4 @@
-package com.example.learnkotlin.kotlin_in_action
+package com.example.learnkotlin
 
 
 /*sealed class CommonErrors
