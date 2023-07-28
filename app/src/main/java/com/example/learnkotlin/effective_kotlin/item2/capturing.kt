@@ -17,7 +17,7 @@ private fun example2() {
         var numbers = generateSequence(2) { it + 1 }
 
         while (true) {
-            val prime = numbers.first()
+            val prime = numbers.first() // 안바뀜
             yield(prime)
             numbers = numbers.drop(1)
                 .filter { it % prime != 0 }
@@ -30,11 +30,16 @@ private fun wrongExample2() {
     val primes: Sequence<Int> = sequence {
         var numbers = generateSequence(2) { it + 1 }
         var prime: Int // 변수 캡쳐
+        //
         while (true) {
             prime = numbers.first()
             yield(prime)
             numbers = numbers.drop(1)
-                .filter { it % prime != 0 } // 시퀀스를 사용해서 필터링 지연
+                .filter { it % prime != 0
+                //
+                } // 시퀀스를 사용해서 필터링 지연
+            // 지연 수행
+            // 캡쳐된 시점과 값이 달라져셔
         }
     }
     println(primes.take(10).toList())
