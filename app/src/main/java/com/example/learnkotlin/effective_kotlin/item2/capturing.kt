@@ -44,6 +44,25 @@ private fun wrongExample2() {
     }
     println(primes.take(10).toList())
 }
+/*act1)
+numbers.first()
+-> 결과 2
+
+act2)
+numbers.drop(1).filter { it % 2 != 0 }.first()
+-> 2 drop -> 3 O => 결과 3
+
+act3)
+numbers.drop(1).filter { it % 3 != 0 }
+.drop(1).filter { it % 3 != 0 }
+.first()
+-> 2가 drop -> 3 x -> 4 O
+-> 4가 drop ->  5 O
+-> 결과 5
+act4)
+numbers.drop(1).filter { it % 5 != 0 }
+.drop(1).filter { it %  5!= 0 }
+.first()*/
 
 fun main() {
     example1()
